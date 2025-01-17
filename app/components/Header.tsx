@@ -1,3 +1,4 @@
+// Header.tsx
 import Image from "next/legacy/image";
 
 export const Header: React.FC = () => {
