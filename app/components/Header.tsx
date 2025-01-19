@@ -1,5 +1,5 @@
-// Header.tsx
 import Image from "next/legacy/image";
+import { ShogiPiece } from "@components/Shogi/ShogiPiece";
 
 export const Header: React.FC = () => {
   return (
@@ -17,15 +17,19 @@ export const Header: React.FC = () => {
           <ul className="flex justify-center items-center gap-4">
             <li>
               <a href="#profile">プロフィール</a>
+              <ShogiPiece name="歩" />
             </li>
             <li>
               <a href="#skill">スキル</a>
+              <ShogiPiece name="歩" />
             </li>
             <li>
               <a href="#works">制作物</a>
+              <ShogiPiece name="歩" />
             </li>
             <li>
               <a href="#contact">連絡先</a>
+              <ShogiPiece name="歩" />
             </li>
           </ul>
         </div>
