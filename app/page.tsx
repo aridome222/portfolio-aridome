@@ -20,19 +20,17 @@ export default function PostPage() {
       </section>
       <section id="profile">
         <h1>連絡先</h1>
-        <p>
-          <ul>
-            <li>
-              Github: <a href="https://github.com/aridome222">@aridome222</a>
-            </li>
-            <li>
-              X: <a href="https://twitter.com/aridome222">@aridome222</a>
-            </li>
-            <li>
-              Qiita: <a href="https://qiita.com/aridome222">@aridome222</a>
-            </li>
-          </ul>
-        </p>
+        <ul>
+          <li>
+            Github: <a href="https://github.com/aridome222">@aridome222</a>
+          </li>
+          <li>
+            X: <a href="https://twitter.com/aridome222">@aridome222</a>
+          </li>
+          <li>
+            Qiita: <a href="https://qiita.com/aridome222">@aridome222</a>
+          </li>
+        </ul>
       </section>
     </>
   );
