@@ -29,7 +29,7 @@ export const Header: React.FC = () => {
             </li>
             <li>
               <a href="#contact">連絡先</a>
-              <ShogiPiece name="歩" />
+              <ShogiPiece name="連絡" />
             </li>
           </ul>
         </div>
