@@ -1,38 +1,31 @@
-import Image from "next/legacy/image";
 import { ShogiPiece } from "@components/Shogi/ShogiPiece";
 
 export const Header: React.FC = () => {
   return (
     <header>
-      <div className="relative w-full h-64">
-        <Image
-          src="/home_imgs/travel_lufy.jpeg"
-          alt="header"
-          layout="fill"
-          objectFit="cover"
-        />
-      </div>
       <nav>
-        <div>
-          <ul className="flex justify-center items-center gap-4">
-            <li>
-              <a href="#profile">プロフィール</a>
+        <ul className="flex gap-4 fixed z-2 top-0 right-0 pt-2.5 pr-4">
+          <li>
+            <a href="#profile" title="Profile">
               <ShogiPiece name="我" />
-            </li>
-            <li>
-              <a href="#skill">スキル</a>
-              <ShogiPiece name="技術" />
-            </li>
-            <li>
-              <a href="#works">制作物</a>
-              <ShogiPiece name="制作" />
-            </li>
-            <li>
-              <a href="#contact">連絡先</a>
-              <ShogiPiece name="連絡" />
-            </li>
-          </ul>
-        </div>
+            </a>
+          </li>
+          <li>
+            <a href="#skill" title="Skill">
+              <ShogiPiece name="技" />
+            </a>
+          </li>
+          <li>
+            <a href="#works" title="Works">
+              <ShogiPiece name="開発" />
+            </a>
+          </li>
+          <li>
+            <a href="#contact" title="Contact">
+              <ShogiPiece name="＠" />
+            </a>
+          </li>
+        </ul>
       </nav>
     </header>
   );
