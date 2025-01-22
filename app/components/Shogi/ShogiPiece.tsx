@@ -13,8 +13,12 @@ export const ShogiPiece = ({ name }: ShogiPieceProps) => {
       ? "text-[18px]"
       : "text-[12px]";
   return (
-    <div className="w-[50px] h-[60px] bg-cover bg-[url('/shogi/mokume.png')] clip-path-custom-shape flex items-center justify-center font-serif text-[24px] font-bold text-black [writing-mode:vertical-rl] pt-1.5">
-      <span className={textSizeClass}>{name}</span>
+    <div className="relative w-[50px] h-[60px] flex items-center justify-center">
+      <div className="absolute inset-0 bg-black clip-path-custom-shape-inner">
+        <div className="w-full h-full bg-amber-400 clip-path-custom-shape flex items-center justify-center font-serif text-black font-bold [writing-mode:vertical-rl] pt-1.5 pr-0.5">
+          <span className={textSizeClass}>{name}</span>
+        </div>
+      </div>
     </div>
   );
 };

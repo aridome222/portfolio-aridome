@@ -13,7 +13,10 @@ const config: Config = {
         foreground: "var(--foreground)",
       },
       clipPath: {
-        'custom-shape': 'polygon(50% 0%, 87% 17%, 100% 100%, 0 100%, 13% 17%)',
+        // 元の駒の形
+        // 'custom-shape': 'polygon(50% 0%, 87% 17%, 100% 100%, 0 100%, 13% 17%)'
+        'custom-shape': 'polygon(50% 2%, 83% 17%, 94% 99%, 2% 99%, 15% 19%)',
+        'custom-shape-inner': 'polygon(50% 0%, 89% 17%, 100% 100%, 0% 100%, 13% 18%)',
       },
     },
   },
