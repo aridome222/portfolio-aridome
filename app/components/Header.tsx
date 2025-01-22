@@ -4,7 +4,7 @@ export const Header: React.FC = () => {
   return (
     <header>
       <nav>
-        <ul className="flex gap-4 fixed z-2 top-0 right-0 pt-2.5 pr-4">
+        <ul className="flex justify-end gap-4 fixed z-2 top-0 pt-2.5 pr-4 bg-gradient-to-b from-yellow-500 to-slate-200 w-full h-20">
           <li>
             <a href="#profile" title="Profile">
               <ShogiPiece name="我" />
