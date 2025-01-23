@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import clipPath from 'tailwind-clip-path';
 
 const config: Config = {
   content: [
@@ -9,8 +10,6 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
       },
       clipPath: {
         // 元の駒の形
@@ -21,7 +20,7 @@ const config: Config = {
     },
   },
   plugins: [
-    require('tailwind-clip-path'),
+    clipPath,
   ],
 };
 export default config;
