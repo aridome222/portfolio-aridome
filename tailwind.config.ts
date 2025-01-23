@@ -10,6 +10,8 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        primary: "#FFAD60",
+        secondary: "#F9C270",
       },
       clipPath: {
         // 元の駒の形

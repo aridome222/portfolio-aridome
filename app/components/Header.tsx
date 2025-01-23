@@ -5,9 +5,9 @@ import { Link as ScrollLink } from "react-scroll";
 
 export const Header: React.FC = () => {
   return (
-    <header>
+    <header className="bg-primary w-full h-20">
       <nav>
-        <ul className="flex justify-end gap-4 fixed z-2 top-0 pt-2.5 pr-4 bg-gradient-to-b from-yellow-500 to-slate-200 w-full h-20">
+        <ul className="flex justify-end gap-4 fixed z-2 top-0 pt-2.5 pr-4 bg-primary opacity-75 w-full h-20">
           <li>
             <div className="cursor-pointer">
               <ScrollLink
