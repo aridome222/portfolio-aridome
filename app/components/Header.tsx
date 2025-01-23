@@ -7,8 +7,8 @@ export const Header: React.FC = () => {
   return (
     <header className="bg-primary w-full h-20">
       <nav>
-        <ul className="flex justify-end gap-4 fixed z-2 top-0 pt-2.5 pr-4 bg-primary opacity-75 w-full h-20">
-          <li>
+        <ul className="flex justify-end fixed z-2 top-0 bg-primary opacity-75 w-full h-20 border-2 border-black">
+          <li className="border-l-2 border-r-2 border-black pt-1.5 px-2">
             <div className="cursor-pointer">
               <ScrollLink
                 to="profile"
@@ -21,7 +21,7 @@ export const Header: React.FC = () => {
               </ScrollLink>
             </div>
           </li>
-          <li>
+          <li className="border-r-2 border-black pt-1.5 px-2">
             <div className="cursor-pointer">
               <ScrollLink
                 to="skill"
@@ -34,7 +34,7 @@ export const Header: React.FC = () => {
               </ScrollLink>
             </div>
           </li>
-          <li>
+          <li className="border-r-2 border-black pt-1.5 px-2">
             <div className="cursor-pointer">
               <ScrollLink
                 to="works"
@@ -47,7 +47,7 @@ export const Header: React.FC = () => {
               </ScrollLink>
             </div>
           </li>
-          <li>
+          <li className="pt-1.5 px-2">
             <div className="cursor-pointer">
               <ScrollLink
                 to="contact"
