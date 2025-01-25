@@ -2,7 +2,7 @@
 import * as THREE from "three";
 import { useEffect } from "react";
 import { GLTFLoader } from "three/addons/loaders/GLTFLoader.js";
-import { TextureLoader } from "three";
+// import { TextureLoader } from "three";
 
 const ShogiPiece3D: React.FC = () => {
   useEffect(() => {
