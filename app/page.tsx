@@ -1,8 +1,10 @@
 // import Image from "next/legacy/image";
+import ShogiPiece3D from "./components/Shogi/ShogiPiece3D";
 
 export default function PostPage() {
   return (
     <>
+      <ShogiPiece3D />
       <div className="pt-20">
         {/* // 画像使うか未定 */}
         {/* <div className="relative w-full h-64">
@@ -16,7 +18,7 @@ export default function PostPage() {
 
         <section id="top" className="min-h-screen">
           <div>
-            <h2 className="p-10">学生エンジニア有留のポートフォリオサイト</h2>
+            <h2 className="p-10">有留のポートフォリオサイト</h2>
             <div className="p-4">
               <p>
                 私の学生エンジニアとしての人生は、将棋の対局のようなものだと思います。
@@ -35,9 +37,15 @@ export default function PostPage() {
         </section>
         <section id="profile" className="min-h-screen">
           <h1>プロフィール</h1>
-          <p>
-            宮崎大学大学院工学研究科工学専攻先端情報コース修士1年の有留直希です。
-          </p>
+          <div className="pl-6">
+            <p>鹿児島県出身の大学院生。</p>
+            <p>
+              2020年に宮崎大学に入学、2024年に卒業。工学部情報システム工学科を次席で卒業。
+            </p>
+            <p>
+              2024年に宮崎大学大学院入学、2026年に卒業見込み。工学研究科光学専攻先端情報コースを課程。
+            </p>
+          </div>
         </section>
         <section id="skill" className="min-h-screen">
           <h1>スキル</h1>
@@ -52,7 +60,7 @@ export default function PostPage() {
         </section>
         <section id="contact" className="min-h-screen">
           <h1>連絡先</h1>
-          <ul className="list-disc ml-8">
+          <ul className="list-disc pl-8">
             <li>
               Github: <a href="https://github.com/aridome222">@aridome222</a>
             </li>

@@ -1,0 +1,11 @@
+Model Information:
+* title:	将棋の駒 -歩兵
+* source:	https://sketchfab.com/3d-models/87a21e216ae342bfbadfd487bb0893b0
+* author:	ppengotsu (https://sketchfab.com/ppengotsu)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "将棋の駒 -歩兵" (https://sketchfab.com/3d-models/87a21e216ae342bfbadfd487bb0893b0) by ppengotsu (https://sketchfab.com/ppengotsu) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
