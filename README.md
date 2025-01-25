@@ -1,6 +1,7 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# portfolio-aridome
+情報系の大学院生である私の、これまでの活動を知ってもらうためのポートフォリオサイトです。
 
-## Getting Started
+## 起動方法
 
 First, run the development server:
 
@@ -20,17 +21,17 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Learn More
 
-To learn more about Next.js, take a look at the following resources:
+## ポートフォリオサイト内で使用した3Dモデル
+### 3Dモデル情報
+- **タイトル**: 将棋の駒 -歩兵
+- **ソース**: [将棋の駒 -歩兵](https://sketchfab.com/3d-models/87a21e216ae342bfbadfd487bb0893b0)
+- **著者**: ppengotsu ([https://sketchfab.com/ppengotsu](https://sketchfab.com/ppengotsu))
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### モデルライセンス
+- **ライセンスタイプ**: CC-BY-4.0 ([ライセンス情報](http://creativecommons.org/licenses/by/4.0/))
+- **要求事項**: 著者をクレジットすること。商業利用も可能。
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+この3Dモデルをプロジェクトで使用する場合は、以下のクレジットをコピー＆ペーストしてください：
+This work is based on "将棋の駒 -歩兵" (https://sketchfab.com/3d-models/87a21e216ae342bfbadfd487bb0893b0) by ppengotsu (https://sketchfab.com/ppengotsu) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
