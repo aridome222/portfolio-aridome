@@ -1,1 +1,1 @@
-declare module 'tailwind-clip-path'; 
+declare module 'tailwind-clip-path';
