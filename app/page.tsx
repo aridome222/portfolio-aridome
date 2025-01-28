@@ -1,4 +1,5 @@
 import ShogiPiece3D from './components/Shogi/ShogiPiece3D';
+import { ProductCard } from './components/ProductCard';
 
 export default function PostPage() {
     return (
@@ -45,8 +46,13 @@ export default function PostPage() {
                         </p>
                     </section>
                     <section id='works' className='min-h-screen'>
-                        <h1>制作物</h1>
-                        <p>OnFes, Tacktail</p>
+                        <h1>開発物</h1>
+                        <ProductCard
+                            image='products/portfolio.png'
+                            title='My Portfolio'
+                            detail='自分の趣味である将棋をコンセプトにしたポートフォリオサイト（作成中です）。
+                    使用技術は、Next.js, React, Typescript, Tailwind CSS, Three.js, Material Tailwindです。'
+                        />
                     </section>
                     <section id='contact' className='min-h-screen'>
                         <h1>連絡先</h1>
