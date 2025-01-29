@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/legacy/image';
 
 import {
     Card,
@@ -11,15 +12,23 @@ import {
 
 type ProductCardProps = {
     image: string;
+    alt: string;
     title: string;
     detail: string;
 };
 
-export function ProductCard({ image, title, detail }: ProductCardProps) {
+export function ProductCard({ image, alt, title, detail }: ProductCardProps) {
     return (
         <Card className='mt-12 ml-6 w-96'>
             <CardHeader color='blue-gray' className='relative'>
-                <img src={image} alt='card-image' />
+                <Image
+                    src={image}
+                    alt={alt}
+                    layout='responsive'
+                    width={200}
+                    height={100}
+                    objectFit='fill'
+                />
             </CardHeader>
             <CardBody>
                 <Typography variant='h5' color='blue-gray' className='mb-2'>

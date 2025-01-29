@@ -48,7 +48,8 @@ export default function PostPage() {
                     <section id='works' className='min-h-screen'>
                         <h1>開発物</h1>
                         <ProductCard
-                            image='products/portfolio.png'
+                            image='/products/portfolio.png'
+                            alt='portfolio-image'
                             title='My Portfolio'
                             detail='自分の趣味である将棋をコンセプトにしたポートフォリオサイト（作成中です）。
                     使用技術は、Next.js, React, Typescript, Tailwind CSS, Three.js, Material Tailwindです。'
