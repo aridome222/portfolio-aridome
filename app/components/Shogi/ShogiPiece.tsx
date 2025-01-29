@@ -13,9 +13,9 @@ export const ShogiPiece = ({ name }: ShogiPieceProps) => {
                 ? 'text-[18px]'
                 : 'text-[12px]';
     return (
-        <div className='relative w-[50px] h-[60px] flex items-center justify-center'>
+        <div className='relative flex h-[60px] w-[50px] items-center justify-center'>
             <div className='absolute inset-0 bg-black clip-path-custom-shape-inner'>
-                <div className='w-full h-full bg-amber-400 clip-path-custom-shape flex items-center justify-center font-serif text-black font-bold [writing-mode:vertical-rl] pt-1.5 pr-0.5'>
+                <div className='flex size-full items-center justify-center bg-amber-400 pr-0.5 pt-1.5 font-serif font-bold text-black clip-path-custom-shape [writing-mode:vertical-rl]'>
                     <span className={textSizeClass}>{name}</span>
                 </div>
             </div>

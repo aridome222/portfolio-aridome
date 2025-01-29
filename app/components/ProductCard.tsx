@@ -25,7 +25,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     detail,
 }: ProductCardProps) => {
     return (
-        <Card className='mt-12 ml-6 w-80 h-82'>
+        <Card className='ml-6 mt-12 h-auto w-80'>
             <CardHeader color='blue-gray' className='relative'>
                 <Image
                     src={image}

@@ -5,10 +5,10 @@ import { Link as ScrollLink } from 'react-scroll';
 
 export const Header: React.FC = () => {
     return (
-        <header className='bg-primary w-full h-20'>
+        <header className='h-20 w-full bg-primary'>
             <nav>
-                <ul className='flex justify-end fixed z-10 top-0 bg-primary opacity-75 w-full h-20 border-2 border-black'>
-                    <li className='border-l-2 border-black pt-1.5 px-2'>
+                <ul className='fixed top-0 z-10 flex h-20 w-full justify-end border-2 border-black bg-primary opacity-75'>
+                    <li className='border-l-2 border-black px-2 pt-1.5'>
                         <div className='cursor-pointer'>
                             <ScrollLink
                                 to='profile'
@@ -21,7 +21,7 @@ export const Header: React.FC = () => {
                             </ScrollLink>
                         </div>
                     </li>
-                    <li className='border-l-2 border-black pt-1.5 px-2'>
+                    <li className='border-l-2 border-black px-2 pt-1.5'>
                         <div className='cursor-pointer'>
                             <ScrollLink
                                 to='skill'
@@ -34,7 +34,7 @@ export const Header: React.FC = () => {
                             </ScrollLink>
                         </div>
                     </li>
-                    <li className='border-l-2 border-black pt-1.5 px-2'>
+                    <li className='border-l-2 border-black px-2 pt-1.5'>
                         <div className='cursor-pointer'>
                             <ScrollLink
                                 to='works'
@@ -47,7 +47,7 @@ export const Header: React.FC = () => {
                             </ScrollLink>
                         </div>
                     </li>
-                    <li className='border-l-2 border-black pt-1.5 px-2'>
+                    <li className='border-l-2 border-black px-2 pt-1.5'>
                         <div className='cursor-pointer'>
                             <ScrollLink
                                 to='contact'

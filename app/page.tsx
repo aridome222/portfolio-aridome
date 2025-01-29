@@ -4,7 +4,7 @@ import { ProductCard } from './components/ProductCard';
 export default function PostPage() {
     return (
         <>
-            <div className="bg-cover bg-center bg-repeat-round bg-fixed bg-[url('/back_img/gold_paper.jpg')]">
+            <div className="bg-[url('/back_img/gold_paper.jpg')] bg-cover bg-fixed bg-center bg-repeat-round">
                 <ShogiPiece3D modelFileName='/3D_model/shogi/scene.gltf' />
                 <section id='top' className='min-h-screen'>
                     <div>
@@ -46,7 +46,7 @@ export default function PostPage() {
                 </section>
                 <section id='works' className='min-h-screen'>
                     <h1>開発</h1>
-                    <div className='grid place-items-center grid-cols-1 md:grid-cols-2 xl:grid-cols-3'>
+                    <div className='grid grid-cols-1 place-items-center md:grid-cols-2 xl:grid-cols-3'>
                         <ProductCard
                             image='/products/portfolio.png'
                             alt='portfolio-image'
