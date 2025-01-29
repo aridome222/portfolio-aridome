@@ -1,5 +1,6 @@
 'use client';
 import Image from 'next/legacy/image';
+import { Modal } from '@components/Modal';
 
 import {
     Card,
@@ -7,7 +8,7 @@ import {
     CardBody,
     CardFooter,
     Typography,
-    Button,
+    // Button,
 } from '@material-tailwind/react';
 
 type ProductCardProps = {
@@ -17,9 +18,14 @@ type ProductCardProps = {
     detail: string;
 };
 
-export function ProductCard({ image, alt, title, detail }: ProductCardProps) {
+export const ProductCard: React.FC<ProductCardProps> = ({
+    image,
+    alt,
+    title,
+    detail,
+}: ProductCardProps) => {
     return (
-        <Card className='mt-12 ml-6 w-96'>
+        <Card className='mt-12 ml-6 w-80 h-82'>
             <CardHeader color='blue-gray' className='relative'>
                 <Image
                     src={image}
@@ -34,11 +40,11 @@ export function ProductCard({ image, alt, title, detail }: ProductCardProps) {
                 <Typography variant='h5' color='blue-gray' className='mb-2'>
                     {title}
                 </Typography>
-                <Typography>{detail}</Typography>
+                <Typography className='line-clamp-2'>{detail}</Typography>
             </CardBody>
             <CardFooter className='pt-0'>
-                <Button>Read More</Button>
+                <Modal />
             </CardFooter>
         </Card>
     );
-}
+};

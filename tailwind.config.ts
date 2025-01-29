@@ -1,5 +1,6 @@
 import type { Config } from 'tailwindcss';
 import clipPath from 'tailwind-clip-path';
+import lineClamp from '@tailwindcss/line-clamp';
 import withMT from '@material-tailwind/react/utils/withMT';
 
 const config: Config = {
@@ -23,6 +24,6 @@ const config: Config = {
             },
         },
     },
-    plugins: [clipPath],
+    plugins: [clipPath, lineClamp],
 };
 export default withMT(config);
