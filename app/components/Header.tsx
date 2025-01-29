@@ -30,7 +30,7 @@ export const Header: React.FC = () => {
                                 offset={-80}
                                 spy={true}
                             >
-                                <ShogiPiece name='技' />
+                                <ShogiPiece name='技術' />
                             </ScrollLink>
                         </div>
                     </li>
