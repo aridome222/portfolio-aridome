@@ -1,6 +1,6 @@
-interface ShogiPieceProps {
+type ShogiPieceProps = {
     name: string;
-}
+};
 
 export const ShogiPiece = ({ name }: ShogiPieceProps) => {
     // 文字数に応じて文字サイズを変更
