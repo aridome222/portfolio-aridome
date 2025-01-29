@@ -5,7 +5,7 @@ export default function PostPage() {
     return (
         <>
             <div className="bg-cover bg-center bg-repeat-round bg-fixed bg-[url('/back_img/gold_paper.jpg')]">
-                <ShogiPiece3D />
+                <ShogiPiece3D modelFileName='/3D_model/shogi/scene.gltf' />
                 <div className='pt-20'>
                     <section id='top' className='min-h-screen'>
                         <div>

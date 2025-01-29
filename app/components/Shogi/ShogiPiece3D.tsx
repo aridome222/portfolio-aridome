@@ -4,7 +4,13 @@ import { useEffect } from 'react';
 import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 // import { TextureLoader } from "three";
 
-const ShogiPiece3D: React.FC = () => {
+type ShogiPiece3DProps = {
+    modelFileName: string;
+};
+
+const ShogiPiece3D: React.FC<ShogiPiece3DProps> = ({
+    modelFileName,
+}: ShogiPiece3DProps) => {
     useEffect(() => {
         // canvasをDOMから取得
         const canvas = document.getElementById('canvas') as HTMLCanvasElement | null;
@@ -50,10 +56,14 @@ const ShogiPiece3D: React.FC = () => {
         pointLight.position.set(1, 2, 3);
         scene.add(pointLight);
 
+        // **軸ヘルパーを追加**
+        // const axesHelper = new THREE.AxesHelper(5); // 引数は軸の長さ（任意）
+        // scene.add(axesHelper);
+
         // 3Dモデルの読み込み
         const loader = new GLTFLoader();
         loader.load(
-            '/3D_model/shogi/scene.gltf',
+            modelFileName,
             (gltf) => {
                 gltf.scene.traverse((child) => {
                     if (child.isObject3D) {
@@ -91,7 +101,8 @@ const ShogiPiece3D: React.FC = () => {
             renderer.setSize(sizes.width, sizes.height);
             renderer.setPixelRatio(window.devicePixelRatio);
         });
-    }, []);
+    }, [modelFileName]);
+
 
     return <canvas id='canvas'></canvas>;
 };
