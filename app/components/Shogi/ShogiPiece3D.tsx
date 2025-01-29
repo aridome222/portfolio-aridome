@@ -103,7 +103,6 @@ const ShogiPiece3D: React.FC<ShogiPiece3DProps> = ({
         });
     }, [modelFileName]);
 
-
     return <canvas id='canvas'></canvas>;
 };
 
