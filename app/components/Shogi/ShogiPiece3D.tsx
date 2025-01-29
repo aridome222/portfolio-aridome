@@ -8,7 +8,7 @@ type ShogiPiece3DProps = {
     modelFileName: string;
 };
 
-const ShogiPiece3D: React.FC<ShogiPiece3DProps> = ({
+export const ShogiPiece3D: React.FC<ShogiPiece3DProps> = ({
     modelFileName,
 }: ShogiPiece3DProps) => {
     useEffect(() => {
@@ -94,16 +94,23 @@ const ShogiPiece3D: React.FC<ShogiPiece3DProps> = ({
 
         // ウィンドウのリサイズ処理
         window.addEventListener('resize', () => {
+            // サイズを取得
             sizes.width = window.innerWidth;
             sizes.height = window.innerHeight;
+
+            // レンダラーのサイズを調整する
+            renderer.setPixelRatio(window.devicePixelRatio);
+            renderer.setSize(sizes.width, sizes.height);
+
+            // カメラへのアスペクト比を正す
             camera.aspect = sizes.width / sizes.height;
             camera.updateProjectionMatrix();
-            renderer.setSize(sizes.width, sizes.height);
-            renderer.setPixelRatio(window.devicePixelRatio);
         });
     }, [modelFileName]);
 
-    return <canvas id='canvas'></canvas>;
+    return (
+        <div className='overflow-hidden'>
+            <canvas id='canvas'></canvas>
+        </div>
+    );
 };
-
-export default ShogiPiece3D;
