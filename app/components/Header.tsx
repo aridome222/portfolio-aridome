@@ -7,7 +7,7 @@ export const Header: React.FC = () => {
     return (
         <header className='h-20 w-full bg-primary'>
             <nav>
-                <ul className='fixed top-0 z-10 flex h-20 w-full justify-end border-2 border-black bg-primary opacity-75'>
+                <ul className='fixed top-0 z-10 flex h-20 w-full justify-end border-y-2 border-black bg-primary opacity-75'>
                     <li className='border-l-2 border-black px-2 pt-1.5'>
                         <div className='cursor-pointer'>
                             <ScrollLink
