@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import { Header } from '@/app/components/Header';
-import { Footer } from '@components/Footer';
+import { Header } from '@/app/components/layout/Header';
+import { Footer } from '@components/layout/Footer';
 
 export const metadata: Metadata = {
     title: '有留直希のポートフォリオサイト',

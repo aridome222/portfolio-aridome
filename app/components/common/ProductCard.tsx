@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/legacy/image';
-import { Modal } from '@components/Modal';
+import { Modal } from '@components/common/Modal';
 
 import {
     Card,

@@ -1,5 +1,5 @@
 import { ShogiPiece3D } from './components/Shogi/ShogiPiece3D';
-import { ProductCard } from './components/ProductCard';
+import { ProductCard } from './components/common/ProductCard';
 
 export default function PostPage() {
     return (
