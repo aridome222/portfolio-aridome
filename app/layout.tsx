@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 import { Header } from '@/app/components/layout/Header';
 import { Footer } from '@components/layout/Footer';
+import { Providers } from './providers';
 
 export const metadata: Metadata = {
     title: '有留直希のポートフォリオサイト',
@@ -17,7 +18,9 @@ export default function RootLayout({
         <html lang='ja'>
             <body>
                 <Header />
-                <main>{children}</main>
+                <main>
+                    <Providers>{children}</Providers>
+                </main>
                 <Footer />
             </body>
         </html>
