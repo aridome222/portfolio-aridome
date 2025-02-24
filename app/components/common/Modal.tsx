@@ -6,16 +6,20 @@ import {
     DialogBody,
     DialogFooter,
 } from '@material-tailwind/react';
+import { useSelector } from 'react-redux';
+import { RootState } from '@/app/store/store';
 
 export const Modal: React.FC = () => {
     const [open, setOpen] = React.useState(false);
 
     const handleOpen = () => setOpen(!open);
 
+    const product = useSelector((state: RootState) => state.product);
+
     return (
         <>
             <Button onClick={handleOpen} variant='gradient'>
-                詳細はこちら
+                {product.description}
             </Button>
             <Dialog open={open} handler={handleOpen}>
                 <DialogHeader>Its a simple modal.</DialogHeader>
