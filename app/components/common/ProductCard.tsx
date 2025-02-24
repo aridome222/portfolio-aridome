@@ -43,7 +43,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
                 <Typography className='line-clamp-2'>{detail}</Typography>
             </CardBody>
             <CardFooter className='pt-0'>
-                <Modal />
+                <Modal title={title} />
             </CardFooter>
         </Card>
     );

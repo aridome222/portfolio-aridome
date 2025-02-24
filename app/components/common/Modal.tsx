@@ -1,4 +1,6 @@
 import React from 'react';
+import Image from 'next/legacy/image';
+import { PRODUCT_LIST } from '@/app/data/productList';
 import {
     Button,
     Dialog,
@@ -7,10 +9,20 @@ import {
     DialogFooter,
 } from '@material-tailwind/react';
 
-export const Modal: React.FC = () => {
-    const [open, setOpen] = React.useState(false);
+type ModalProps = {
+    title: string; // ProductCard から受け取る title
+};
 
+export const Modal: React.FC<ModalProps> = ({ title }: ModalProps) => {
+    const [open, setOpen] = React.useState(false);
     const handleOpen = () => setOpen(!open);
+
+    // title に一致する product を取得
+    const product = PRODUCT_LIST.find((p) => p.title === title);
+    // タイトルの記述ミスがある場合はエラーを吐く
+    if (!product) {
+        throw new Error(`Product with title "${title}" not found`);
+    }
 
     return (
         <>
@@ -18,12 +30,42 @@ export const Modal: React.FC = () => {
                 詳細はこちら
             </Button>
             <Dialog open={open} handler={handleOpen}>
-                <DialogHeader>Its a simple modal.</DialogHeader>
+                <DialogHeader>{product.title}</DialogHeader>
                 <DialogBody>
-                    The key to more success is to have a lot of pillows. Put it this way,
-                    it took me twenty five years to get these plants, twenty five years of
-                    blood sweat and tears, and I&apos;m never giving up, I&apos;m just
-                    getting started. I&apos;m up to something. Fan luv.
+                    <div>
+                        <Image
+                            src={product.image}
+                            alt={product.alt}
+                            layout='responsive'
+                            width={200}
+                            height={100}
+                            objectFit='fill'
+                        />
+                        <br />
+                        {product.description.map((desc, index) => {
+                            return <p key={index}>{desc}</p>;
+                        })}
+                        <h3 className='mt-6'>使用技術</h3>
+                        <div className='flex gap-2'>
+                            {product.teckStacks.map((tech, index) => {
+                                return <span key={index}>{tech},</span>;
+                            })}
+                        </div>
+                        <h3 className='mt-6'>リンク</h3>
+                        <div className='flex gap-2'>
+                            {product.links.map((link, index) => (
+                                <a
+                                    key={index}
+                                    href={link.href}
+                                    target='_blank'
+                                    rel='noopener noreferrer'
+                                    className='text-blue-500 hover:text-blue-700'
+                                >
+                                    {link.kinds}
+                                </a>
+                            ))}
+                        </div>
+                    </div>
                 </DialogBody>
                 <DialogFooter>
                     <Button
@@ -32,10 +74,7 @@ export const Modal: React.FC = () => {
                         onClick={handleOpen}
                         className='mr-1'
                     >
-                        <span>Cancel</span>
-                    </Button>
-                    <Button variant='gradient' color='green' onClick={handleOpen}>
-                        <span>Confirm</span>
+                        <span>戻る</span>
                     </Button>
                 </DialogFooter>
             </Dialog>

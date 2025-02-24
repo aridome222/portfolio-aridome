@@ -51,7 +51,7 @@ export default function PostPage() {
                             image='/products/portfolio.png'
                             alt='portfolio-image'
                             title='My Portfolio Site'
-                            detail='趣味である将棋をコンセプトに作成したポートフォリオサイト（作成中）。'
+                            detail='趣味である将棋をコンセプトに作成したポートフォリオサイト（作成中）です。'
                             // 使用技術は、Next.js, React, Typescript, Tailwind CSS, Three.js, Material Tailwindです。
                         />
                         <ProductCard
