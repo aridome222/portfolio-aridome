@@ -72,7 +72,7 @@ export default function PostPage() {
                                 image='/products/albite.png'
                                 alt='albite-image'
                                 title='学生エンジニアバイト'
-                                detail='Webアプリケーション開発のアルバイトに約1年従事しています。'
+                                detail='Webアプリケーション開発のアルバイトに約1年従事していました。'
                             />
                             <ProductCard
                                 image='/products/etrobo2024.png'
