@@ -53,7 +53,6 @@ export default function PostPage() {
                                 alt='portfolio-image'
                                 title='My Portfolio Site'
                                 detail='趣味である将棋をコンセプトに作成したポートフォリオサイト（作成中）です。'
-                                // 使用技術は、Next.js, React, Typescript, Tailwind CSS, Three.js, Material Tailwindです。
                             />
                             <ProductCard
                                 image='/products/OnFES_near.png'
@@ -78,7 +77,7 @@ export default function PostPage() {
                                 image='/products/etrobo2024.png'
                                 alt='etrobo2024-image'
                                 title='ETロボコン'
-                                detail='ETロボコン大会に2年連続参加。2024年度は、九州地区準優勝、全国5位の実績を残せました。'
+                                detail='ETロボコンは、学生時代に最も力を入れたチーム活動です。この大会では、組み込みソフトウェアの開発技術を競い、「走行競技」と「モデル審査」の2つの観点から評価されます。'
                             />
                         </div>
                     </section>
