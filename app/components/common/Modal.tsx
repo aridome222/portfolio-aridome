@@ -47,23 +47,29 @@ export const Modal: React.FC<ModalProps> = ({ title }: ModalProps) => {
                         })}
                         <h3 className='mt-6'>使用技術</h3>
                         <div className='flex gap-2'>
+                            {/* indexよりもproductのteckStacksの要素にidを振ってteckStack.idを使った方がリストの要素が削除・追加された時に不要なレンダリングが発生しないが、今回は要素の削除・追加がないためindexを使用 */}
                             {product.teckStacks.map((tech, index) => {
                                 return <span key={index}>{tech},</span>;
                             })}
                         </div>
                         <h3 className='mt-6'>リンク</h3>
                         <div className='flex gap-2'>
-                            {product.links.map((link, index) => (
-                                <a
-                                    key={index}
-                                    href={link.href}
-                                    target='_blank'
-                                    rel='noopener noreferrer'
-                                    className='text-blue-500 hover:text-blue-700'
-                                >
-                                    {link.kinds}
-                                </a>
-                            ))}
+                            {/* リンクがあれば表示、なければ「リンクなし」と表示 */}
+                            {product.links.length > 0 ? (
+                                product.links.map((link, index) => (
+                                    <a
+                                        key={index}
+                                        href={link.href}
+                                        target='_blank'
+                                        rel='noopener noreferrer'
+                                        className='text-blue-500 hover:text-blue-700'
+                                    >
+                                        {link.kinds}
+                                    </a>
+                                ))
+                            ) : (
+                                <p>リンクなし</p>
+                            )}
                         </div>
                     </div>
                 </DialogBody>

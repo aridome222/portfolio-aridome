@@ -130,12 +130,8 @@ export const PRODUCT_LIST: Product[] = [
             'Backlog',
             'Slack',
         ],
-        links: [
-            {
-                href: 'https://github.com/aridome222/portfolio-aridome',
-                kinds: 'GitHub',
-            },
-        ],
+        // プライベートなリポジトリなため、リンクは貼れません。
+        links: [],
     },
     {
         title: 'ETロボコン',
