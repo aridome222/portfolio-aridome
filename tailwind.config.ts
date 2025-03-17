@@ -12,8 +12,9 @@ const config: Config = {
     theme: {
         extend: {
             colors: {
-                primary: '#FFAD60',
-                secondary: '#F9C270',
+                primary: '#FFAD60', // オレンジがかった明るいベージュ（アプリコット系）
+                secondary: '#F9C270', // 少し淡いオレンジ（サンドベージュ系）
+                beni: '#e60033', // 紅色（べにいろ）
             },
             clipPath: {
                 // 元の駒の形
