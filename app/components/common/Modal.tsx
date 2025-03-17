@@ -1,4 +1,4 @@
-import React from 'react';
+import { useState } from 'react';
 import Image from 'next/legacy/image';
 import { PRODUCT_LIST } from '@/app/data/productList';
 import {
@@ -14,7 +14,7 @@ type ModalProps = {
 };
 
 export const Modal: React.FC<ModalProps> = ({ title }: ModalProps) => {
-    const [open, setOpen] = React.useState(false);
+    const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(!open);
 
     // title に一致する product を取得
@@ -29,7 +29,12 @@ export const Modal: React.FC<ModalProps> = ({ title }: ModalProps) => {
             <Button onClick={handleOpen} variant='gradient'>
                 詳細はこちら
             </Button>
-            <Dialog open={open} handler={handleOpen}>
+            <Dialog
+                open={open}
+                handler={handleOpen}
+                // TODO: モーダルを開いた時に、最初から一番下にスクロールされてしまう原因を突き止める
+                className='max-h-[90vh] max-w-3xl overflow-auto'
+            >
                 <DialogHeader>{product.title}</DialogHeader>
                 <DialogBody>
                     <div>
