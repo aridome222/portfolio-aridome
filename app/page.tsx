@@ -9,7 +9,7 @@ export default function PostPage() {
                 <div className='px-24'>
                     <section id='top' className='min-h-screen'>
                         <div>
-                            <h1>有留のポートフォリオサイト</h1>
+                            <h1>有留のポートフォリオサイト!</h1>
                             <div className='pl-6'>
                                 <p>
                                     私の学生エンジニアとしての人生は、将棋の対局のようなものだと思います。
