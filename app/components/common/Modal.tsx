@@ -27,9 +27,15 @@ export const Modal: React.FC<ModalProps> = ({ title }) => {
 
             {/* モーダル本体 */}
             {open && (
-                <div className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50'>
+                <div
+                    className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50'
+                    onClick={handleOpen}
+                >
                     {/* モーダルの中身 */}
-                    <div className='bg-white max-w-3xl w-full max-h-[90vh] overflow-y-auto rounded-lg shadow-lg p-6 relative'>
+                    <div
+                        className='bg-white max-w-3xl w-full max-h-[90vh] overflow-y-auto rounded-lg shadow-lg p-6 relative'
+                        onClick={(e) => e.stopPropagation()}
+                    >
                         {/* 閉じるボタン */}
                         <button
                             onClick={handleOpen}
