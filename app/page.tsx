@@ -6,8 +6,8 @@ export default function PostPage() {
         <>
             <div className="bg-[url('/back_img/gold_paper.jpg')] bg-cover bg-fixed bg-center bg-repeat-round">
                 <ShogiPiece3D modelFileName='/3D_model/shogi/scene.gltf' />
-                <div className='px-24'>
-                    <section id='top' className='min-h-screen'>
+                <div className='mx-auto max-w-4xl px-4'>
+                    <section id='top' className='mb-24'>
                         <div>
                             <h1>有留のポートフォリオサイト</h1>
                             <div className='pl-6'>
@@ -26,7 +26,7 @@ export default function PostPage() {
                             </div>
                         </div>
                     </section>
-                    <section id='profile' className='min-h-screen'>
+                    <section id='profile' className='mb-24'>
                         <h1>我</h1>
                         <div className='pl-6'>
                             <p>鹿児島県出身の大学院生。</p>
@@ -38,16 +38,16 @@ export default function PostPage() {
                             </p>
                         </div>
                     </section>
-                    <section id='skill' className='min-h-screen'>
+                    <section id='skill' className='mb-24'>
                         <h1>技術</h1>
                         <p className='pl-6'>
                             C, C++, Python, JavaScript, TypeScript, React, Next.js,
                             Tailwind CSS, Flask, MySQL, PostgreSQL, Git, Docker
                         </p>
                     </section>
-                    <section id='works' className='min-h-screen'>
+                    <section id='works'>
                         <h1>開発</h1>
-                        <div className='grid grid-cols-1 place-items-center md:grid-cols-2 xl:grid-cols-3'>
+                        <div className='grid grid-cols-1 place-items-center md:grid-cols-2'>
                             <ProductCard
                                 image='/products/portfolio.png'
                                 alt='portfolio-image'
@@ -81,7 +81,7 @@ export default function PostPage() {
                             />
                         </div>
                     </section>
-                    <section id='contact' className='min-h-screen'>
+                    <section id='contact' className='mt-32 min-h-screen'>
                         <h1>＠</h1>
                         <ul className='list-disc pl-8'>
                             <li>
