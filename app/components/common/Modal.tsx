@@ -1,95 +1,109 @@
 import { useState } from 'react';
-import Image from 'next/legacy/image';
+import Image from 'next/image';
 import { PRODUCT_LIST } from '@/app/data/productList';
-import {
-    Button,
-    Dialog,
-    DialogHeader,
-    DialogBody,
-    DialogFooter,
-} from '@material-tailwind/react';
 
 type ModalProps = {
-    title: string; // ProductCard から受け取る title
+    title: string;
 };
 
-export const Modal: React.FC<ModalProps> = ({ title }: ModalProps) => {
+export const Modal: React.FC<ModalProps> = ({ title }) => {
     const [open, setOpen] = useState(false);
     const handleOpen = () => setOpen(!open);
 
-    // title に一致する product を取得
     const product = PRODUCT_LIST.find((p) => p.title === title);
-    // タイトルの記述ミスがある場合はエラーを吐く
     if (!product) {
         throw new Error(`Product with title "${title}" not found`);
     }
 
     return (
         <>
-            <Button onClick={handleOpen} variant='gradient'>
-                詳細はこちら
-            </Button>
-            <Dialog
-                open={open}
-                handler={handleOpen}
-                // TODO: モーダルを開いた時に、最初から一番下にスクロールされてしまう原因を突き止める
-                className='max-h-[90vh] max-w-3xl overflow-auto'
+            {/* トリガーボタン */}
+            <button
+                onClick={handleOpen}
+                className='bg-gradient-to-r from-blue-500 to-purple-500 text-white px-4 py-2 rounded shadow'
             >
-                <DialogHeader>{product.title}</DialogHeader>
-                <DialogBody>
-                    <Image
-                        src={product.image}
-                        alt={product.alt}
-                        layout='responsive'
-                        width={200}
-                        height={100}
-                        objectFit='fill'
-                    />
-                    <br />
-                    {product.description.map((desc, index) => (
-                        <p key={index}>{desc}</p>
-                    ))}
-                    <h3 className='mt-6'>使用技術</h3>
-                    <div className='flex flex-wrap gap-2'>
-                        {/* indexよりもproductのteckStacksの要素にidを振ってteckStack.idを使った方がリストの要素が削除・追加された時に不要なレンダリングが発生しないが、今回は要素の削除・追加がないためindexを使用 */}
-                        {product.teckStacks.map((tech, index) => (
-                            <span key={index}>
-                                {tech}
-                                {index === product.teckStacks.length - 1 ? '.' : ','}
-                            </span>
+                詳細はこちら
+            </button>
+
+            {/* モーダル本体 */}
+            {open && (
+                <div className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50'>
+                    {/* モーダルの中身 */}
+                    <div className='bg-white max-w-3xl w-full max-h-[90vh] overflow-y-auto rounded-lg shadow-lg p-6 relative'>
+                        {/* 閉じるボタン */}
+                        <button
+                            onClick={handleOpen}
+                            className='absolute top-3 right-3 text-gray-500 hover:text-red-500 text-xl'
+                        >
+                            ×
+                        </button>
+
+                        {/* ヘッダー */}
+                        <h2 className='text-2xl font-bold text-center mb-4'>
+                            {product.title}
+                        </h2>
+
+                        {/* 画像 */}
+                        <div className='relative w-full aspect-[2/1] mb-4'>
+                            <Image
+                                src={product.image}
+                                alt={product.alt}
+                                fill
+                                className='object-fill'
+                                priority
+                            />
+                        </div>
+
+                        {/* 説明文 */}
+                        {product.description.map((desc, index) => (
+                            <p key={index} className='mb-2'>
+                                {desc}
+                            </p>
                         ))}
+
+                        {/* 使用技術 */}
+                        <h3 className='mt-6 font-semibold'>使用技術</h3>
+                        <div className='flex flex-wrap gap-2 mb-4'>
+                            {product.teckStacks.map((tech, index) => (
+                                <span key={index}>
+                                    {tech}
+                                    {index === product.teckStacks.length - 1 ? '.' : ','}
+                                </span>
+                            ))}
+                        </div>
+
+                        {/* リンク */}
+                        <h3 className='mt-6 font-semibold'>リンク</h3>
+                        <div className='flex gap-4'>
+                            {product.links.length > 0 ? (
+                                product.links.map((link, index) => (
+                                    <a
+                                        key={index}
+                                        href={link.href}
+                                        target='_blank'
+                                        rel='noopener noreferrer'
+                                        className='text-blue-500 hover:text-blue-700 underline'
+                                    >
+                                        {link.kinds}
+                                    </a>
+                                ))
+                            ) : (
+                                <p>リンクなし</p>
+                            )}
+                        </div>
+
+                        {/* フッター（戻るボタン） */}
+                        <div className='mt-6 text-right'>
+                            <button
+                                onClick={handleOpen}
+                                className='px-4 py-2 bg-red-500 text-white rounded hover:bg-red-600'
+                            >
+                                戻る
+                            </button>
+                        </div>
                     </div>
-                    <h3 className='mt-6'>リンク</h3>
-                    <div className='flex gap-4'>
-                        {/* リンクがあれば表示、なければ「リンクなし」と表示 */}
-                        {product.links.length > 0 ? (
-                            product.links.map((link, index) => (
-                                <a
-                                    key={index}
-                                    href={link.href}
-                                    target='_blank'
-                                    rel='noopener noreferrer'
-                                    className='text-blue-500 hover:text-blue-700'
-                                >
-                                    {link.kinds}
-                                </a>
-                            ))
-                        ) : (
-                            <p>リンクなし</p>
-                        )}
-                    </div>
-                </DialogBody>
-                <DialogFooter>
-                    <Button
-                        variant='text'
-                        color='red'
-                        onClick={handleOpen}
-                        className='mr-1'
-                    >
-                        <span>戻る</span>
-                    </Button>
-                </DialogFooter>
-            </Dialog>
+                </div>
+            )}
         </>
     );
 };
