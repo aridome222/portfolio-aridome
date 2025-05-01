@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { PRODUCT_LIST } from '@/app/data/productList';
 
@@ -14,6 +14,18 @@ export const Modal: React.FC<ModalProps> = ({ title }) => {
     if (!product) {
         throw new Error(`Product with title "${title}" not found`);
     }
+
+    useEffect(() => {
+        if (open) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = '';
+        }
+
+        return () => {
+            document.body.style.overflow = '';
+        };
+    }, [open]);
 
     return (
         <>
